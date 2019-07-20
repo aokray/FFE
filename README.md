@@ -12,7 +12,7 @@ FFE is very similar to SkLearn data set transform tools. For example, taking
 a data set and transforming it to a fair representation in an RKHS using a
 polynomial kernel:
 
-'''python
+```python
 # Given a data set "sample", indexes of the unprotected class "unprotected_idxs",
 # and indexes of the protected class "protected_idxs"
 from _ffe import FFE
@@ -24,5 +24,5 @@ polyFairTransform = FFE(
                     kernel_params={'degree':4, 'coef0':0.1}
                     )
 fair_data = polyFairTransform(sample)
-'''
+```
 
