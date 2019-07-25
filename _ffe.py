@@ -14,7 +14,7 @@ def _calc_eigens(K, K_u, K_p, up_idxs, p_idxs, num_features):
     scale = len(p_idxs) ** 2
     M = (
         (scale / len(up_idxs) ** 2) * K_u.T.dot(K_u)
-        + ((2 * scale) / (len(up_idxs) * len(p_idxs)))
+        - ((2 * scale) / (len(up_idxs) * len(p_idxs)))
         * K_u.T.dot(one_u.dot(one_p.T)).dot(K_p)
         + (scale / len(p_idxs) ** 2) * K_p.T.dot(K_p)
     )
@@ -28,10 +28,6 @@ def _calc_eigens(K, K_u, K_p, up_idxs, p_idxs, num_features):
     # Be sure to deallocate these huge memory chunks
     M = None
     KinvM = None
-
-    best_order = np.argsort(vals)
-    vals = vals[best_order]
-    vecs = vecs[best_order]
 
     return vals, vecs
 
@@ -88,7 +84,7 @@ class FFE:
         K_u = None
         K_p = None
 
-        self.features = vecs[0 : self.num_features].T
+        self.features = vecs[:,0 : self.num_features] 
 
         # Construct and return explicit representation of data in kernel space
         return K.dot(self.features)
