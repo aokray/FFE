@@ -27,6 +27,6 @@ polyFairTransform = FFE(
 fair_data = polyFairTransform(sample)
 ```
 
-It's at this point you can use the transformed data ```python fair_data``` to
+It's at this point you can use the transformed data ```fair_data``` to
 learn a base model; In our case, this is Ridge regression.
 
