@@ -26,7 +26,7 @@ polyFairTransform = FFE(
     "polynomial",
     kernel_params={"degree": 4, "coef0": 0.1},
 )
-fair_data = polyFairTransform(sample)
+fair_data = polyFairTransform.transform(sample)
 ```
 
 It's at this point you can use the transformed data ```fair_data``` to
