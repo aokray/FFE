@@ -2,7 +2,8 @@
 Code Repository for Fair Kernel Regression via Fair Feature Embeddings
 in Kernel Space (https://arxiv.org/abs/1907.02242), accepted at ICTAI'19 - if you use this code, please cite our paper.
 
-All data used in our paper can be found here: https://uwyomachinelearning.github.io/.
+All data used in our paper can be found here: http://okray.ml/data.html
+(simply an updated version of those found at https://uwyomachinelearning.github.io/).
 
 # Explanation
 Fair Feature Embeddings (FFE) are *learned* features in a kernel space, and the
